@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Atividade 1a</title>
+       
+  <style>
+    #resultado {
+      font-weight: bold;}
+    #media {
+      color: blue;}
+    #situacao {
+      color: red;}
+  </style>
+</head>
+
+<body>
+  <h1>Média</h1>
+
+   <button onclick="calcularMedia()">Calcular</button>
+
+  <p>Resultado: <span id="resultado"></span></p>
+  
+  <script>
+      //Usando a instrução prompt() do Javascript.
+    function calcularMedia() {
+      let nota1 = parseFloat(prompt("Digite a primeira nota:"));
+      let nota2 = parseFloat(prompt("Digite a segunda nota:"));
+
+      let media = (nota1 + nota2) / 2;
+      let situacao
+      let cor;
+
+      if (media >= 6) {
+        situacao = "Aprovado";
+        cor = "blue";
+      } else {
+        situacao = "Reprovado";
+        cor = "red";
+      }
+     
+      let resultado = "Média: " + media.toFixed(1) + " - Situação: <span id='situacao'>" + situacao + "</span>";
+      document.getElementById("resultado").innerHTML = resultado;
+      document.getElementById("situacao").style.color = cor;
+    }
+  </script>
+   
+      <button onclick="document.location='index.html'">Votar</button>
+
+</body>
+</html>
